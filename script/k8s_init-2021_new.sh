@@ -75,6 +75,9 @@ yum install -y yum-utils device-mapper-persistent-data lvm2 wget net-tools nfs-u
 
 #安装docker-ce,官方建议版本19.03
 docker_config(){
+yum-config-manager \
+--add-repo \
+http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 yum install docker-ce docker-ce-cli containerd.io -y
 systemctl start docker
 systemctl enable docker
